@@ -1,5 +1,4 @@
 package String_Calculator;
-import java.util.StringTokenizer;
 
 public class StringCalculator {
 	public int Add(String numbers)
@@ -10,13 +9,13 @@ public class StringCalculator {
 		}
 		else
 		{
-			StringTokenizer st = new StringTokenizer(numbers,",");
-			int sum=0;
-			while(st.hasMoreTokens())
+			String[] nums = numbers.split(",|\n");
+			int sum = 0;
+			for(int i=0;i<nums.length;i++)
 			{
-				sum+=Integer.parseInt(st.nextToken());
+				sum+=Integer.parseInt(nums[i]);
 			}
-			return(sum);
+			return sum;
 		}
 	}
 
