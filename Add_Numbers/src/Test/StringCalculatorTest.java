@@ -44,4 +44,14 @@ public class StringCalculatorTest {
 		assertEquals(26,sc.Add("5,6,8,7"),"Additon of digits should work");
 	}
 	
+	@Test
+	@DisplayName("Addition of string containg ',' and '\n' as delimeter")
+	public void testAdd_with_new_delimeter()
+	{
+		assertEquals(3,sc.Add("1\n2"),"Additon of digits with multiple delimeter should work");
+		assertEquals(6,sc.Add("1\n2,3"),"Additon of digits with multiple delimeter should work");
+		assertEquals(18,sc.Add("5,6\n7"),"Additon of digits with multiple delimeter should work");
+		assertEquals(18,sc.Add("5\n6\n7"),"Additon of digits with multiple delimeter should work");
+	}
+	
 }
