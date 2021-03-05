@@ -36,5 +36,12 @@ public class StringCalculatorTest {
 	{
 		assertEquals(3,sc.Add("1,2"),"Additon with 2 digit should work");
 	}
+	@Test
+	@DisplayName("Addition of string containg more than two digit should work")
+	public void testAdd_digits()
+	{
+		assertEquals(10,sc.Add("1,2,3,4"),"Additon of digits should work");
+		assertEquals(26,sc.Add("5,6,8,7"),"Additon of digits should work");
+	}
 	
 }
