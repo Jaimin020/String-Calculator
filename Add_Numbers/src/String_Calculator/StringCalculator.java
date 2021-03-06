@@ -1,6 +1,8 @@
 package String_Calculator;
 
 public class StringCalculator {
+	
+	//Below method do addition of numbers that are passed in the form of string with specified delimiters.
 	public int Add(String numbers) throws NegativeNumberException
 	{
 		if(numbers.isEmpty())
@@ -27,17 +29,27 @@ public class StringCalculator {
 				{
 					int j=3;
 					del+='(';
-					while(numbers.charAt(j)!=']')
+					while(numbers.charAt(j)!='\n')
 					{
 						if(numbers.charAt(j)=='*' || numbers.charAt(j)=='(' || numbers.charAt(j)=='.' || numbers.charAt(j)=='+' || numbers.charAt(j)=='?' || numbers.charAt(j)==')')
 						{
 							del+='\\';
 						}
-						del+=numbers.charAt(j);
+						if(numbers.charAt(j)==']')
+						{
+							del+=")";
+						}
+						else if(numbers.charAt(j)=='[')
+						{
+							del+="|(";
+						}
+						else
+						{
+							del+=numbers.charAt(j);
+						}
 						j+=1;
 					}
-					del+=')';
-					nums = numbers.substring(j+2).split(del);
+					nums = numbers.substring(j+1).split(del);
 				}
 				for(int i=0;i<nums.length;i++)
 				{
