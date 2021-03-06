@@ -27,6 +27,10 @@ public class StringCalculator {
 						flag=1;
 						neg_nums+=(nums[i]+" ");
 					}
+					if(tem>1000)
+					{
+						continue;
+					}
 					sum+=tem;
 				}
 				if(flag==1)
@@ -44,6 +48,10 @@ public class StringCalculator {
 					{
 						flag=1;
 						neg_nums+=(nums[i]+" ");
+					}
+					if(tem>1000)
+					{
+						continue;
 					}
 					sum+=tem;
 				}
