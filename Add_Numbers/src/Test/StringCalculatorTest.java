@@ -85,5 +85,14 @@ public class StringCalculatorTest
 	    assertTrue(actualMessage.contains(expectedMessage));
 	}
 	
+	@Test
+	@DisplayName("Addition of string containg numbers greater than 1000")
+	public void testAdd_nums_greater_tha_1000() throws NegativeNumberException
+	{
+		assertEquals(2,sc.Add("//;\n1001;2"),"Additon of digits with custom delimeter should work");
+		assertEquals(0,sc.Add("//\n\n10001\n10002"),"Additon of digits with custom delimeter should work");
+		assertEquals(1011,sc.Add("//.\n5.6.1000"),"Additon of digits with custom delimeter should work");
+		assertEquals(18,sc.Add("5\n6,7"),"Additon of digits with custom delimeter should work");
+	}
 	
 }
