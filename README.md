@@ -18,3 +18,4 @@ Ex3: String = //[**][?]\n1?2\*\*3<br>
 
 Testing is done using JUnit 5.
 <br>
+![alt text](https://github.com/Jaimin020/String-Calculator/blob/master/Image/Test_cases.PNG)
