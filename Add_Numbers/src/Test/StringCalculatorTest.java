@@ -11,6 +11,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.rules.ExpectedException;
 
+//Here all test cases are defined. Testing is done using JUnit 5.
 public class StringCalculatorTest
 {
 	private StringCalculator sc;
@@ -103,10 +104,11 @@ public class StringCalculatorTest
 		assertEquals(0,sc.Add("//[((]\n10001((10002"),"Additon of digits should work");
 		assertEquals(1011,sc.Add("//[...]\n5...6...1000"),"Additon of digits should work");
 		assertEquals(18,sc.Add("5\n6,7"),"Additon of digits should work");
+		assertEquals(18,sc.Add("//[??]\n5??6??7"),"Additon of digits should work");
 	}
 	
 	@Test
-	@DisplayName("Addition of string containg Multiple delimiters delimiter")
+	@DisplayName("Addition of string containg Multiple delimiters")
 	public void testAdd_Mul_delimiter() throws NegativeNumberException
 	{
 		assertEquals(5,sc.Add("//[*][?]\n1001*2?3"),"Additon of digits should work");
@@ -115,4 +117,17 @@ public class StringCalculatorTest
 		assertEquals(18,sc.Add("5\n6,7"),"Additon of digits should work");
 		assertEquals(18,sc.Add("//[??]\n5??6??7"),"Additon of digits should work");
 	}
+	
+	@Test
+	@DisplayName("Addition of string containg Multiple delimiters of any length")
+	public void testAdd_Mul_delimiter_any_length() throws NegativeNumberException
+	{
+		assertEquals(5,sc.Add("//[**][?]\n1001**2?3"),"Additon of digits should work");
+		assertEquals(0,sc.Add("//[(]\n10001(10002"),"Additon of digits should work");
+		assertEquals(1011,sc.Add("//[...][**]\n5...6**1000"),"Additon of digits should work");
+		assertEquals(18,sc.Add("5\n6,7"),"Additon of digits should work");
+		assertEquals(18,sc.Add("//[???][**]\n5???6**7"),"Additon of digits should work");
+	}
+	
+	
 }
