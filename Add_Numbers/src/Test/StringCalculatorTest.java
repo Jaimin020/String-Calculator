@@ -95,4 +95,14 @@ public class StringCalculatorTest
 		assertEquals(18,sc.Add("5\n6,7"),"Additon of digits with custom delimeter should work");
 	}
 	
+	@Test
+	@DisplayName("Addition of string containg delimiter of any lenth")
+	public void testAdd_delimiter_of_any_lenth() throws NegativeNumberException
+	{
+		assertEquals(2,sc.Add("//[***]\n1001***2"),"Additon of digits should work");
+		assertEquals(0,sc.Add("//[((]\n10001((10002"),"Additon of digits should work");
+		assertEquals(1011,sc.Add("//[...]\n5...6...1000"),"Additon of digits should work");
+		assertEquals(18,sc.Add("5\n6,7"),"Additon of digits should work");
+	}
+	
 }
