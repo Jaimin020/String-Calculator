@@ -16,9 +16,29 @@ public class StringCalculator {
 			if(numbers.charAt(0)=='/')
 			{
 				String del = "";
-				del+=numbers.charAt(2);
-				del="["+del+"]";
-				String[] nums = numbers.substring(4).split(del);
+				String[] nums;
+				if(numbers.charAt(2)!='[')
+				{
+					del+=numbers.charAt(2);
+					del="["+del+"]";
+					nums = numbers.substring(4).split(del,-1);
+				}
+				else
+				{
+					int j=3;
+					del+='(';
+					while(numbers.charAt(j)!=']')
+					{
+						if(numbers.charAt(j)=='*' || numbers.charAt(j)=='(' || numbers.charAt(j)=='.' || numbers.charAt(j)=='+' || numbers.charAt(j)=='?' || numbers.charAt(j)==')')
+						{
+							del+='\\';
+						}
+						del+=numbers.charAt(j);
+						j+=1;
+					}
+					del+=')';
+					nums = numbers.substring(j+2).split(del);
+				}
 				for(int i=0;i<nums.length;i++)
 				{
 					tem = Integer.parseInt(nums[i]);
