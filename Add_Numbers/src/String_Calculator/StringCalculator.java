@@ -9,11 +9,25 @@ public class StringCalculator {
 		}
 		else
 		{
-			String[] nums = numbers.split(",|\n");
 			int sum = 0;
-			for(int i=0;i<nums.length;i++)
+			if(numbers.charAt(0)=='/')
 			{
-				sum+=Integer.parseInt(nums[i]);
+				String del = "";
+				del+=numbers.charAt(2);
+				del="["+del+"]";
+				String[] nums = numbers.substring(4).split(del);
+				for(int i=0;i<nums.length;i++)
+				{
+					sum+=Integer.parseInt(nums[i]);
+				}
+			}
+			else
+			{
+				String[] nums = numbers.split(",|\n");
+				for(int i=0;i<nums.length;i++)
+				{
+					sum+=Integer.parseInt(nums[i]);
+				}
 			}
 			return sum;
 		}
