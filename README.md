@@ -3,17 +3,17 @@ It takes numbers in the form of string and add them.<br><br>
 You can pass your own delimiter in specific formate like given below.<br>
 Ex1: String = 1,2
      O/P:- 3
-<br>
-Ex1: String = //;\n1\;2<br>
+<br><br>
+Ex2: String = //;\n1\;2<br>
      O/P:- 3
 <br>
 <br>
 You can also pass multiple delimiter like given below.<br>
-Ex2: String = //[*][?]\n1\*2?3<br>
+Ex3: String = //[*][?]\n1\*2?3<br>
      O/P:- 6
 <br>     
 You can also padd multiple delimiter with any length.<br>
-Ex3: String = //[**][?]\n1?2\*\*3<br>
+Ex4: String = //[**][?]\n1?2\*\*3<br>
      O/P:- 6
 <br>
 <br>
