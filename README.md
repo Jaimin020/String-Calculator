@@ -1,7 +1,7 @@
 # String-Calculator
 It takes numbers in the form of string and add them.<br><br>
 You can pass your own delimiter in specific formate like given below.<br>
-Ex1: String = 1,2
+Ex1: String = 1,2<br>
      O/P:- 3
 <br><br>
 Ex2: String = //;\n1\;2<br>
